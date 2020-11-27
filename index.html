@@ -4,25 +4,59 @@
 		<style>
 		   .center {
 			text-align: center; /* Выравнивание по центру */ 
-		   }
-		      .bck {
+		    }
+		    .bck {
 				background: rgba(0, 0, 135, 0.5); /* Цвет фона */
 				color: #fff; /* Цвет текста */
 				padding: 5px; /* Поля вокруг текста */
-			  }
+			}
+			.tab {
+				padding: 10px;
+			}
 		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/core.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+		<script type="text/javascript">
+			<!--
+			
+				function validate()
+				{
+					ans = CryptoJS.MD5(document.myForm.Answer.value.toLowerCase()).toString();
+					if( ans == "5a298b5ccbadef5f9c46d40d392b6504")
+					{
+						alert("Мои поздравления!!! Вы угадали верный ответ!");
+						document.myForm.Name.focus() ;
+						return false;
+					}
+				}
+			
+			//-->
+		</script>
 	</head>
 	<body bgcolor="CCCCFF">
-		<div class = "bck center">
+		<h1>
+			Разыскивается бар — штаб преступной группировки…
+		</h1>
+		<div class = "bck center tab">
 			<p> Я готова слушать эту песню снова и снова... </p>
 		</div>
 		</p>
-		<div class = "center">
+		<div class = "center tab">
 			<audio controls>
 			<source src="/audio/OSINT4.mp3">
 			<p>Ваш браузер не поддерживает аудио</p>
 			<a href="/audio/OSINT4.mp3">Скачайте музыку</a>
 			</audio>
+		</div>
+		<div class = "center">
+			<img src="/img/1.jpg" alt="Угон секретных документов">
+		</div>
+		<div>
+			<p>В каком баре находится штаб преступной группировки?</p>
+			<form name="myForm" onsubmit="return(validate());">
+				<input type="text" name="Answer" required>
+				<input type="submit" value="Проверить">
+			</form>
 		</div>
 	</body>
 </html>
